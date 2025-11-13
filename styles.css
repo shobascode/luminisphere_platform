@@ -1,3 +1,6 @@
+/* Google Fonts Import: Playpen Sans - Extra Light (weight 200) and Regular (weight 400) */
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@200;400&display=swap');
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -39,8 +42,10 @@ body {
 }
 
 .brand-text {
-    font-family: 'Playpen Sans', cursive;
-    font-weight: 200;
+    /* Font is now imported and ready to use */
+    font-family: 'Playpen Sans', cursive; 
+    /* This line applies the "Extra Light" style */
+    font-weight: 200; 
     font-size: 2.2rem;
     color: #333;
     margin: 0;
