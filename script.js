@@ -6,10 +6,7 @@ let isAnimating = false;
 
 // Initialize the platform when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initializeNavigation();
     initializeAnimations();
-    initializeTopicFilters();
-    setupSmoothScrolling();
     
     // Initialize MathJax after content is loaded
     if (window.MathJax) {
@@ -17,53 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Navigation functionality
-function initializeNavigation() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-}
-
-// Smooth scrolling for navigation links
-function setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
-
-// Scroll to section function
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-}
 
 // Initialize all animations
 function initializeAnimations() {
@@ -405,31 +355,6 @@ function animateSineWave() {
     animate();
 }
 
-// Topic filtering functionality
-function initializeTopicFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const animationCards = document.querySelectorAll('.animation-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const filter = this.getAttribute('data-filter');
-            
-            animationCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-topic') === filter) {
-                    card.style.display = 'block';
-                    card.classList.add('fade-in');
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-}
 
 // Utility functions
 function debounce(func, wait) {
@@ -471,6 +396,5 @@ document.addEventListener('DOMContentLoaded', setupScrollAnimations);
 // Export functions for potential external use
 window.MathAnimations = {
     playAnimation,
-    scrollToSection,
     initializeAnimations
 };
