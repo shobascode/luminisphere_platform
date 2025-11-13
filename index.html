@@ -3,92 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Animations Platform</title>
+    <title>Luminisphere</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- MathJax for rendering mathematical expressions -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            }
-        };
-    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-container">
-                <div class="logo-container">
-                    <img src="logo.jpg" alt="Luminisphere" class="logo">
-                    <h1 class="nav-title">Luminisphere</h1>
-                </div>
+                <img src="logo.jpg" alt="Luminisphere" class="logo">
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>Explore Mathematics Through Animation</h1>
-                <p>Interactive visualizations that make complex mathematical concepts accessible and engaging.</p>
-                <button class="cta-button">Start Exploring</button>
-            </div>
-        </section>
-
-        <section id="animations" class="animations-section">
-            <div class="container">
-                <h2>Featured Animations</h2>
-                <div class="animation-grid">
-                    <div class="animation-card" data-topic="calculus">
-                        <div class="animation-preview" id="derivative-animation">
-                            <canvas width="300" height="200"></canvas>
-                        </div>
-                        <div class="card-content">
-                            <h3>Derivative Visualization</h3>
-                            <p>Watch how the derivative represents the slope of a function at any point.</p>
-                            <div class="math-formula">$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$</div>
-                            <button class="play-button" onclick="playAnimation('derivative')">Play Animation</button>
-                        </div>
-                    </div>
-
-                    <div class="animation-card" data-topic="geometry">
-                        <div class="animation-preview" id="circle-animation">
-                            <canvas width="300" height="200"></canvas>
-                        </div>
-                        <div class="card-content">
-                            <h3>Circle Properties</h3>
-                            <p>Explore the relationship between radius, diameter, and circumference.</p>
-                            <div class="math-formula">$$C = 2\pi r$$</div>
-                            <button class="play-button" onclick="playAnimation('circle')">Play Animation</button>
-                        </div>
-                    </div>
-
-                    <div class="animation-card" data-topic="trigonometry">
-                        <div class="animation-preview" id="sine-wave-animation">
-                            <canvas width="300" height="200"></canvas>
-                        </div>
-                        <div class="card-content">
-                            <h3>Sine Wave Formation</h3>
-                            <p>See how the sine function emerges from the unit circle.</p>
-                            <div class="math-formula">$$y = \sin(x)$$</div>
-                            <button class="play-button" onclick="playAnimation('sine')">Play Animation</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <!-- Blank white screen -->
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Luminisphere. Making mathematics visual and accessible.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
