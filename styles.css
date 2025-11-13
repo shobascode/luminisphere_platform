@@ -49,7 +49,7 @@ body {
     font-size: 1.8rem;
     color: #333;
     margin: 0;
-    margin-left: 1.5cm;
+    margin-left: 1cm;
 }
 
 /* Main content area */
@@ -68,25 +68,25 @@ main {
 /* Video Section */
 .video-section {
     padding: 60px 0;
-    text-align: center;
 }
 
-.video-section h2 {
-    font-family: 'Playpen Sans', cursive;
-    font-weight: 400;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 2rem;
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.video-container {
+.video-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.video-container video {
-    max-width: 100%;
+.video-item video {
+    width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -101,7 +101,7 @@ main {
     
     .brand-text {
         font-size: 1.4rem;
-        margin-left: 1cm;
+        margin-left: 0.7cm;
     }
     
     .nav-container {
@@ -117,12 +117,13 @@ main {
         padding: 40px 0;
     }
     
-    .video-section h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .video-container video {
+    .video-item video {
+        max-width: 100%;
         border-radius: 8px;
     }
 }
